@@ -277,5 +277,5 @@ for(let mode=0;mode<4;mode++) for(let n=0;n<vocabularyPairs.length;n++){
   if(item!==correct && pair[1]!==meaning && !others.includes(item))others.push(item);
  }
  const prompts=[`「${word}」の意味として最も適切なものを選んでください。`,`「${meaning}」に最も近い英単語を選んでください。`,`次の英単語の意味を選びましょう：${word}`,`次の意味を表す英単語を選びましょう：${meaning}`];
- extraDrills.push({q:prompts[mode],o:[english?word:meaning,...others],a:0,e:`${word} は「${meaning}」という意味があります。文脈によって別の意味で使われることもあります。`});
+ extraDrills.push({wordKey:word,q:prompts[mode],o:[english?word:meaning,...others],a:0,e:`${word} は「${meaning}」という意味があります。文脈によって別の意味で使われることもあります。`});
 }
